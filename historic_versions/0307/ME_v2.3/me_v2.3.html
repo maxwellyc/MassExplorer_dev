@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<html>
+    <body>
+        
+        <!-- REMEMBER TO ADD FILTERING OF EVEN N,Z ONLY -->
+        <h1>Mass Explorer v2.3beta</h1>
+        
+        <p>Please input even-even proton and neutron number:</p>
+        
+        <!-- Input proton and neutron number, create button to submit -->
+        <p>Z= <input id="proton" type="number">N= <input id="neutron" type="number"></p>
+        <!-- Data Name: <input id="name" type="text"> Typed-input Search Engine Disabled -->
+<!-- Drop down menu for EDF selection -->
+<select id="EDF_usr_input">
+    <option value="" disabled="disabled" selected="selected">Select Energy Density Functional</option>
+    <option value="UNEDF0">UNEDF0</option>
+    <option value="UNEDF1">UNEDF1</option>
+    <option value="SKMS">SKMS</option>
+    <option value="SKP">SKP</option>
+    <option value="SLY4">SLY4</option>
+    <option value="SV_MIN">SV-MIN</option>
+</select>
+
+<!-- Drop down menu for datatype selection -->
+<select id="EDR_input_datatype">
+    <option value="" disabled="disabled" selected="selected">Select Data Type</option>
+    
+    <option value="" disabled="disabled">Energy:</option>
+    <option value="HFB_Energy_LN">HFB Energy LN</option>
+    <option value="HFB_Energy">HFB Energy</option>
+    <option value="LN_Energy_P">Proton LN Energy</option>
+    <option value="LN_Energy_N">Neutron LN Energy</option>
+    <option value="Coulomb_Direct">Coulomb Direct Energy</option>
+    <option value="Coulomb_Exchange">Coulomb Exchange Energy</option>
+    <option value="Fermi_Energy_P">Proton Fermi Energy</option>
+    <option value="Fermi_Energy_N">Neutron Fermi Energy</option>
+    <option value="Kinetic_P">Proton Kinetic Energy</option>
+    <option value="Kinetic_N">Neutron Kinetic Energy</option>
+    <option value="Kinetic_total">Total Kinetic Energy</option>
+    <option value="Spin-orbit_energy">Spin-orbit Energy</option>
+    
+    <option value="" disabled="disabled">Pairing:</option>
+    <option value="Pairing_energy_P">Proton Pairing Energy</option>
+    <option value="Pairing_energy_N">Neutron Pairing Energy</option>
+    <option value="Pairing_gap_P">Proton Pairing Gap</option>
+    <option value="Pairing_gap_N">Neutron Pairing Gap</option>
+
+    <option value="" disabled="disabled">Quadrupole Moment:</option>
+    <option value="Quad_Moment_Q2_P">Proton Quadrupole Moment</option>
+    <option value="Quad_Moment_Q2_N">Neutron Quadrupole Moment</option>
+    <option value="Quad_Moment_Q2_total">Total Quadrupole Moment</option>
+    
+    <option value="" disabled="disabled"> &beta;2:</option>
+    <option value="Quad_Def_Beta2_P">&beta;2, Proton Quadrupole Deformation</option>
+    <option value="Quad_Def_Beta2_N">&beta;2, Neutron Quadrupole Deformation</option>
+    <option value="Quad_Def_Beta2_total">&beta;2, Total Quadrupole Deformation</option>
+    
+    <option value="" disabled="disabled">Radius:</option>
+    <option value="RMS_radius_P">Proton RMS Radius</option>
+    <option value="RMS_radius_N">Neutron RMS Radius</option>
+    <option value="RMS_radius_total">Total RMS Radius</option>
+    <option value="Charge_Radius">Charge Radius</option>
+</select>
+
+
+        <button type="button" onclick="NZInput(document.getElementById('proton').value,document.getElementById('neutron').value,document.getElementById('EDF_usr_input').value)" >Search</button>
+
+        
+        
+        <!-- Outout text of Data required or error msg: -->
+        <p id='demo'></p>
+        <img class="images" id="test" alt="">
+        
+        <!-- main sort functions:
+         1. Allow input of even-even N,Z only & within range & within database, o/w return error msg using function NZInput;
+         2. Select-Match Energy Density Functional
+         3. Select-Match Datatype
+         4. Changed element label for Z=104+ to alphabet name
+         5. Lower case for 2nd letter in element label, eg. PB -> Pb
+         -->
+        
+    <script src="functions/sort.js" type="text/javascript" charset="utf-8"> </script>
+    
+    <!-- Data Input-->
+    <script src="data/edf_data.dat" type="text/javascript" charset="utf-8"></script>
+
+
+    </body>
+</html> 
+
+

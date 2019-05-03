@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- REMEMBER TO ADD FILTERING OF EVEN N,Z ONLY -->
+<h1>N,Z number selection</h1>
+
+<p>Please input even numbers of Proton & Neutron</p>
+
+<!-- Input proton and neutron number, create button to submit -->
+<p>Z= <input id="proton" type="number">N= <input id="neutron" type="number"></p>Data Name: <input id="NameOfData" type="text">
+<button type="button" onclick="NZInput(document.getElementById('proton').value,document.getElementById('neutron').value); DisplayN()" >Submit</button>
+
+
+<!-- Outout text of Data required or error msg: -->
+<p id='demo'></p>
+
+<!-- main script functions: 
+1.Select only integer N,Z within range o/w return error msg using NZInput; 
+2.Select Data -->
+
+<script>
+  //Define global Z,N for later use:  
+var Z=1;
+var N=2;
+
+//function NZInput, filter correct input, redefine value for  Z,N;
+    function NZInput(z,n)
+  {
+  
+//this "text" can be changed into a list or string to output various element, let's try single input proton number first:
+
+  var  x,y, text;
+  
+  //Redefine N,Z value:
+  N = n;
+  Z = z;
+  x = parseFloat(z,10);
+  y = parseFloat(n,10);
+  z1 = parseInt(z,10)+1;
+  n1 = parseInt(n,10)+1;
+//if n,z is a integer and between 1~150/1~300, x/y tests if z/n is integer and even number: 
+  if ( isNaN(z) || z<1 ||z>150 || !((x|0)===x) || parseInt(z/2,10) != parseInt(z1/2,10) )
+
+//pick integer Z within 1~150 only:    
+    {
+      text = "Please enter even Z between 1 ~ 150";
+    }
+
+//pick integer N within 1~300 only:    
+      else if ( isNaN(n) || n<1 ||n>300 || !((y|0)===y) || parseInt(n/2,10) != parseInt(n1/2,10) ){
+	 text = "Please enter even N between 1 ~ 300";
+      }
+
+      else {
+//Element should be a string or list to correspond, change in future:
+	 text = "ElementX's data etc.";
+	 }
+      document.getElementById('demo').innerHTML = text
+      }
+
+ 
+
+     </script>
+     
+</body>
+</html> 
+
+

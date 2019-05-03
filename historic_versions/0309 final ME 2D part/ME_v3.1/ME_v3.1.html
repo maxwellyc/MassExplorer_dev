@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+        <style type="text/css">
+            #singleElement{width:800px;height:500px;}
+            </style>
+    <!-- main sort functions:
+         1. Allow input of even-even N,Z only & within range & within database, o/w return error msg using function NZInput;
+         2. Select-Match Energy Density Functional
+         3. Select-Match Datatype
+         4. Changed element label for Z=104+ to alphabet name
+         5. Lower case for 2nd letter in element label, eg. PB -> Pb
+    -->
+    <script src="functions/sort.js" type="text/javascript" charset="utf-8"> </script>
+        
+    <!-- Data Input-->
+    <script src="data/edf_data.js" type="text/javascript" charset="utf-8"></script>
+    
+    
+    <!-- Plots -->
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript"
+     src="library/flot/excanvas.min.js"></script><![endif]-->
+    <script type="text/javascript" src="library/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="library/flot/jquery.flot.js"></script>
+    <script type="text/javascript" src="library/flot/jquery.flot.symbol.js"></script>
+    <script type="text/javascript" src="library/flot/jquery.flot.axislabels.js"></script>
+    <script type="text/javascript" src="functions/plot_single.js"></script>
+    
+    
+</head>
+<html>
+    <body>
+        
+        <!-- REMEMBER TO ADD FILTERING OF EVEN N,Z ONLY -->
+        <h1>Mass Explorer v3.1beta</h1>
+        <h2>Single Element Data Search:</h2>
+        <p>Please input even-even proton and neutron number:</p>
+        
+        <!-- Input proton and neutron number, create button to submit -->
+        <p>Z= <input id="proton" type="number">N= <input id="neutron" type="number"></p>
+        <!-- Data Name: <input id="name" type="text"> Typed-input Search Engine Disabled -->
+<!-- Drop down menu for EDF selection -->
+<select id="EDF_usr_input">
+    <option value="" disabled="disabled" selected="selected">Select Energy Density Functional</option>
+    <option value="UNEDF0">UNEDF0</option>
+    <option value="UNEDF1">UNEDF1</option>
+    <option value="SKMS">SKMS</option>
+    <option value="SKP">SKP</option>
+    <option value="SLY4">SLY4</option>
+    <option value="SV_MIN">SV-MIN</option>
+</select>
+
+<!-- Drop down menu for datatype selection -->
+<select id="EDF_input_datatype">
+    <option value="" disabled="disabled" selected="selected">Select Data Type</option>
+    
+    <option value="" disabled="disabled">Energy:</option>
+    <option value="HFB_Energy_LN">HFB Energy LN</option>
+    <option value="HFB_Energy">HFB Energy</option>
+    <option value="LN_Energy_P">Proton LN Energy</option>
+    <option value="LN_Energy_N">Neutron LN Energy</option>
+    <option value="Coulomb_Direct">Coulomb Direct Energy</option>
+    <option value="Coulomb_Exchange">Coulomb Exchange Energy</option>
+    <option value="Fermi_Energy_P">Proton Fermi Energy</option>
+    <option value="Fermi_Energy_N">Neutron Fermi Energy</option>
+    <option value="Kinetic_P">Proton Kinetic Energy</option>
+    <option value="Kinetic_N">Neutron Kinetic Energy</option>
+    <option value="Kinetic_total">Total Kinetic Energy</option>
+    <option value="Spin-orbit_energy">Spin-orbit Energy</option>
+    
+    <option value="" disabled="disabled">Pairing:</option>
+    <option value="Pairing_energy_P">Proton Pairing Energy</option>
+    <option value="Pairing_energy_N">Neutron Pairing Energy</option>
+    <option value="Pairing_gap_P">Proton Pairing Gap</option>
+    <option value="Pairing_gap_N">Neutron Pairing Gap</option>
+
+    <option value="" disabled="disabled">Quadrupole Moment:</option>
+    <option value="Quad_Moment_Q2_P">Proton Quadrupole Moment</option>
+    <option value="Quad_Moment_Q2_N">Neutron Quadrupole Moment</option>
+    <option value="Quad_Moment_Q2_total">Total Quadrupole Moment</option>
+    
+    <option value="" disabled="disabled"> &beta;2:</option>
+    <option value="Quad_Def_Beta2_P">&beta;2, Proton Quadrupole Deformation</option>
+    <option value="Quad_Def_Beta2_N">&beta;2, Neutron Quadrupole Deformation</option>
+    <option value="Quad_Def_Beta2_total">&beta;2, Total Quadrupole Deformation</option>
+    
+    <option value="" disabled="disabled">Radius:</option>
+    <option value="RMS_radius_P">Proton RMS Radius</option>
+    <option value="RMS_radius_N">Neutron RMS Radius</option>
+    <option value="RMS_radius_total">Total RMS Radius</option>
+    <option value="Charge_Radius">Charge Radius</option>
+</select>
+
+
+        <button type="button" onclick="NZInput(document.getElementById('proton').value,document.getElementById('neutron').value,document.getElementById('EDF_usr_input').value)" >Search</button>
+
+        
+        
+        <!-- Outout text of Data required or error msg: -->
+        <p id='dataOutput'></p>
+        <b><p style="color:red" id='sortErr'></p></b>
+        <img class="images" id="test" alt="">
+
+    
+    
+    <!-- SingleElement Isotopes Data Plot......................................................... -->
+    
+    <h2>Isotope/Isotone/Isobar Line Plot:</h2>
+    
+        <!-- Drop down menu for EDF selection, testing checkbox
+        <select id="EDF_singleplot">
+            <option value="" disabled="disabled" selected="selected">Select Energy Density Functional</option>
+            <option value="UNEDF0">UNEDF0</option>
+            <option value="UNEDF1">UNEDF1</option>
+            <option value="SKMS">SKMS</option>
+            <option value="SKP">SKP</option>
+            <option value="SLY4">SLY4</option>
+            <option value="SV_MIN">SV-MIN</option>
+        </select> -->
+        
+        <!--Input Element proton number to plot-->
+        <select id="chainType">
+            <option value="" disabled="disabled" selected="selected">Select Chain Type:</option>
+            
+            <option value="Z">Isotopic</option>
+            <option value="N">Isotonic</option>
+            <option value="AN">Isobaric, x axis: Neutron number</option>
+            <option value="AZ">Isobaric, x axis: Proton number</option>
+        </select>
+        
+        <p>Z or N or A= <input id="zSinglePlot" type="number"></p>
+        <b><p style="color:red" id='plotErr' ></p></b>
+        <!-- Drop down menu for datatype selection -->
+        <p>Select Data for plot: <select id="Datatype_singleplot">
+            <option value="" disabled="disabled" selected="selected">Select Data Type</option>
+            
+            <option value="" disabled="disabled">Energy:</option>
+            <option value="HFB_Energy_LN">HFB Energy LN</option>
+            <option value="HFB_Energy">HFB Energy</option>
+            <option value="LN_Energy_P">Proton LN Energy</option>
+            <option value="LN_Energy_N">Neutron LN Energy</option>
+            <option value="Coulomb_Direct">Coulomb Direct Energy</option>
+            <option value="Coulomb_Exchange">Coulomb Exchange Energy</option>
+            <option value="Fermi_Energy_P">Proton Fermi Energy</option>
+            <option value="Fermi_Energy_N">Neutron Fermi Energy</option>
+            <option value="Kinetic_P">Proton Kinetic Energy</option>
+            <option value="Kinetic_N">Neutron Kinetic Energy</option>
+            <option value="Kinetic_total">Total Kinetic Energy</option>
+            <option value="Spin-orbit_energy">Spin-orbit Energy</option>
+            
+            <option value="" disabled="disabled">Pairing:</option>
+            <option value="Pairing_energy_P">Proton Pairing Energy</option>
+            <option value="Pairing_energy_N">Neutron Pairing Energy</option>
+            <option value="Pairing_gap_P">Proton Pairing Gap</option>
+            <option value="Pairing_gap_N">Neutron Pairing Gap</option>
+            
+            <option value="" disabled="disabled">Quadrupole Moment:</option>
+            <option value="Quad_Moment_Q2_P">Proton Quadrupole Moment</option>
+            <option value="Quad_Moment_Q2_N">Neutron Quadrupole Moment</option>
+            <option value="Quad_Moment_Q2_total">Total Quadrupole Moment</option>
+            
+            <option value="" disabled="disabled"> &beta;2:</option>
+            <option value="Quad_Def_Beta2_P">&beta;2, Proton Quadrupole Deformation</option>
+            <option value="Quad_Def_Beta2_N">&beta;2, Neutron Quadrupole Deformation</option>
+            <option value="Quad_Def_Beta2_total">&beta;2, Total Quadrupole Deformation</option>
+            
+            <option value="" disabled="disabled">Radius:</option>
+            <option value="RMS_radius_P">Proton RMS Radius</option>
+            <option value="RMS_radius_N">Neutron RMS Radius</option>
+            <option value="RMS_radius_total">Total RMS Radius</option>
+            <option value="Charge_Radius">Charge Radius</option>
+        </select></p>
+        
+        <!--CheckBox for EDF to plot-->
+        <p>Choose Energy Density Function to plot:</p>
+        <input type="checkbox" id="CB_ALL">All;
+        <input type="checkbox" id="CB_UNEDF0">UNEDF0
+        <input type="checkbox" id="CB_UNEDF1">UNEDF1
+        <input type="checkbox" id="CB_SKMS">SKMS
+        <input type="checkbox" id="CB_SKP">SKP
+        <input type="checkbox" id="CB_SLY4">SLY4
+        <input type="checkbox" id="CB_SV_MIN">SV-MIN
+        <p></p>
+        <input type="checkbox" id="CB_AVG">Plot Average
+        <input type="checkbox" id="CB_AVGONLY">Plot Average Only
+        <input type="checkbox" id="CB_hideLgd">Hide Legend
+            
+        <button type="button" onclick=
+            "PlotInput(
+            document.getElementById('chainType').value,
+            document.getElementById('zSinglePlot').value,
+            document.getElementById('Datatype_singleplot').value,
+            document.getElementById('CB_UNEDF0').checked ,
+            document.getElementById('CB_UNEDF1').checked,
+            document.getElementById('CB_SKMS').checked,
+            document.getElementById('CB_SKP').checked,
+            document.getElementById('CB_SLY4').checked,
+            document.getElementById('CB_SV_MIN').checked,
+            document.getElementById('CB_ALL').checked,
+            document.getElementById('CB_AVG').checked,
+            document.getElementById('CB_hideLgd').checked,
+            document.getElementById('CB_AVGONLY').checked)" >Plot</button>
+        <p></p>
+        
+        
+        
+    <div id="singleElement" align='center'></div>
+    <div id="placeholder"></div>
+    <p id='flags'></p>
+
+    </body>
+</html> 
+
+

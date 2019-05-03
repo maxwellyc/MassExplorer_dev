@@ -1,0 +1,9 @@
+Separated Data file string from main script, so data loading is fast.
+Separated Functions into different .js file to categorize in future.
+
+
+Simply by making "**.js" files and call script in html document by:
+<script src="Data/**.js"type="text/javascript" charset="utf-8" >
+
+PLEASE DO NOT CHANGE DIRECTORY NAMES UNDER MTE_v*.* FOLDER
+PLEASE USE MTE_v*.*.html ONLY WHEN Data & Function .js files are available
