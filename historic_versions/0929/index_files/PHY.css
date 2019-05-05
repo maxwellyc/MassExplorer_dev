@@ -1,0 +1,625 @@
+/* CSS Document */
+/* College of Architecture and Design */ 
+
+/* 	This document (CoAD.css) Runs locally for the College of Architecture and Design in combination with global.css.  It is a secondary style sheet and is intended to work in combination with global.css. It was made by Katherine Campbell kcampbe4 (at) utk (dot) edu or kat (at) pictokat (dot) com */
+
+
+body {
+	/* trying to over write GLOBAL CSS */
+	text-align: center;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #333333;
+	background-color: #CCF;
+	background-repeat: no-repeat;
+	background-position: top;
+	}
+
+/* 'http://www.arch.utk.edu/serena/images/main-back.jpg' */
+
+/* HEADER */
+
+h1 {
+	/* Styles the main heading.  NOTE: Each page should have only one H1 */
+	color: #bf4d02;
+	font-family: Helvetica, Verdana, Arial;
+	font-size: 2.5em;
+	line-height: 1em;
+	font-weight: lighter;
+	margin-top: 0.5em;
+	margin-right: 3em;
+	margin-bottom: 0.5em;
+	margin-left: 0.8em;
+	}
+	
+	
+	
+/* IMAGES */ 
+
+.rightphotos {
+	background-color: #EEEEEE;
+	padding: 0px;
+	float: right;
+	vertical-align: top;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	background-image: none;
+	margin-top: -10px;
+	margin-right: 0em;
+	margin-bottom: 0em;
+	margin-left: 0em;
+}
+.mainrightphoto {
+	background-color: #EEEEEE;
+	border: 0px;
+	padding: 0px;
+	float: right;
+	vertical-align: top;
+	margin-top: 20px;
+	margin-right: 0em;
+	margin-bottom: 0em;
+	margin-left: 0em;
+}
+
+	
+.border-photo {
+	/* Adds a shaded margin and border */
+	background-color: #EEEEEE;
+	border: 1px solid #EEEEEE;
+	padding: 3px;
+	}
+.right-float-photo {
+	/* Adds the shaded margin and border, and also floats the image to the right with a bit of padding so that text does not butt up directly beside it */
+	background-color: #FFFFFF;
+	float: right;
+	padding: 3px;
+	border: 1px solid #EEEEEE;
+	margin: 0px 0px 15px 15px;
+	}
+.left-float-photo {
+	/* Adds the shaded margin and border, and also floats the image to the left with a bit of padding so that text does not butt up directly beside it */
+	background-color: #EEEEEE;
+	float: left;
+	padding: 3px;
+	border: 1px solid #EEEEEE;
+	margin: 0px 15px 15px 0px;
+	}
+	
+	
+/* MAIN CONTENT AREA */
+
+#content-outer {
+	/* Establishes the width of the Content area and styles it. simple-outer-back is a background image that creates the left drop-shadow on the main menu */
+	background-color: #EDEDED;
+	background-repeat: repeat-y;
+	background-position: center top;
+	background-image: url(../images/content-outer-1.jpg);
+	}
+#content-inner {
+	background-color: #FFF;
+	background-position: center top;
+	}
+
+#main-content {
+	/* Establishes the width of the main content area and defines a default font.  The div is 700 pixels wide because there is 20 pixels of margin on the left (20 + 700 = 720).  simple-main-back is a background image that creates the right drop-shadow on the main menu. */
+	font-family: Arial, Helvetica, sans-serif;
+	width: 700px;
+	background-color: #A0A0A4;
+	background-repeat: no-repeat;
+	background-position: left top;
+	font-size: 12px;
+	color: #7F7FAA;
+	padding-top: 2em;
+	padding-right: 0px;
+	padding-bottom: 0em;
+	padding-left: 20px;
+	}
+
+#main #main-content{
+	margin: 0em 0em 0em 0em;
+	background-color: #ffffff;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 0pt 0pt;
+}
+#table-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #2A7FAA;
+}
+
+
+/* http://www.arch.utk.edu/images/headers/main-title-glass.jpg */
+
+#main-content p {
+	/* Styles everything within p tags <p> . . . </p> */
+	font-size: 1.3em;
+	line-height: 1.667em;
+	margin-top: 1.5em;
+	margin-right: 0em;
+	margin-bottom: 1em;
+	margin-left: 1.6em;
+	color: #808080;
+	}
+#main-content h2 {
+	/* Styles all Heading 2s in the main content area. Use H2 for the main subheads in your content */
+	font-size: 1.3em;
+	line-height: 1.333em;
+	margin: 2em 0em 1em 1.6em;
+	color: #1c3f6b;
+	font-weight: ;
+	}
+#main-content h3 {
+	/* Styles all Heading 3s in the main content area. Use H3 for the sub-subheads in your content. For example, use H3 to title a small ordered list that is found under a main subhead (H2) */
+	font-size: 1.2em;
+	line-height: 1.333em;
+	margin: 2em 0em 1em 1.6em;
+	color: #333333;
+        text-transform: uppercase;
+	}
+
+#main-content h4 {
+	/* Styles all Heading 3s in the main content area. Use H3 for the sub-subheads in your content. For example, use H3 to title a small ordered list that is found under a main subhead (H2) */
+	font-size: 1em;
+	line-height: 1.333em;
+	margin: 2em 0em 1em 2em;
+	color: #333333;
+        text-transform: uppercase;
+	}
+
+
+
+#main-content a {
+	/* Styles all links in the main content area. */
+	color: #666666;
+	font-size:1.1em;
+	line-height:1.2em;
+	text-decoration: underline;
+        	}
+#main-content a:hover {
+	color: #FF9900;
+	font-size: 1.1em;
+	line-height:1.2em;
+	text-decoration: underline;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+	}
+#main-content ul {
+	/* Styles all unordered lists in the main content area */
+	padding-left: 15px;
+	margin-left: 15px;
+        font-weight: lighter;
+	}
+#main-content ul li {
+	list-style-type: square;
+	font-size: 1.1em;
+	line-height: 1.667em;
+	font-weight: lighter;
+	color: green;
+	font-family: Arial, Helvetica, sans-serif;
+	list-style-position: outside;
+	margin-left: -10px;
+	}
+#main-content ol {
+	/* Styles all ordered lists in the main content area */
+	padding-left: 15px;
+	margin-left: 15px;
+        font-weight: lighter;
+	}
+#main-content ol li {
+	font-size: 1.2em;
+	line-height: 1.667em;
+        font-weight: lighter;
+	}
+#table-lists div {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #2A3FAA;
+}
+
+	
+
+
+	/* LEFT MENU FUNCTION MAIN*/
+
+#menu-college {
+	display:none;
+	}
+#college #menu-college {
+	display:block;
+	}
+	
+#menu-academic {
+	display:none;
+	}	
+#academic #menu-academic {
+	display:block;
+	}
+	
+#menu-admissions {
+	display:none;
+	}	
+#admissions #menu-admissions {
+	display:block;
+	}
+	
+#menu-resources {
+	display:none;
+	}	
+#resources #menu-resources {
+	display:block;
+	}
+	
+#menu-alumni {
+	display:none;
+	}	
+#alumni #menu-alumni {
+	display:block;
+	}
+	
+#menu-research {
+	display:none;
+	}	
+#research #menu-research {
+	display:block;
+
+
+	/* LEFT MENU FUNCTION UNDERGRAD-ARCH*/
+
+	}
+#menu-undergrad-arch {
+	display:none;
+	}
+#undergrad-arch #menu-undergrad-arch {
+	display:block;
+	}
+#undergrad-arch #menu-mainmenu {
+	display: none;
+	}
+
+
+	/* LEFT MENU FUNCTION UNDERGRAD-ID*/
+
+
+#menu-undergrad-id {
+	display:none;
+	}
+#undergrad-id #menu-undergrad-id {
+	display:block;
+	}
+#undergrad-id #menu-mainmenu {
+	display: none;
+	}
+
+	/* LEFT MENU FUNCTION GRAD-ARCH*/
+	
+#menu-grad-arch {
+	display:none;
+	}
+#grad-arch #menu-grad-arch {
+	display:block;
+	}
+#grad-arch #menu-mainmenu {
+	display: none;
+	}
+#grad-arch #menu-grad-curr {
+	display: none;
+	}
+#grad-curr #menu-grad-arch {
+        display:block;
+        }
+#grad-curr #menu-grad-curr {
+        display:block;
+        }
+#grad-curr #menu-mainmenu {
+        display:none;
+        }
+
+	/* LEFT MENU FUNCTION GRAD-LAND*/
+	
+#menu-grad-land {
+	display:none;
+	}
+#grad-land #menu-grad-land {
+	display:block;
+	}
+#grad-land #menu-mainmenu {
+	display: none;
+	}
+
+
+	/* LEFT MENU STYLES*/
+
+#left-menu {
+	/* left-menu styles the main menu column */
+	font-family: Helvetica;
+	width: 240px;
+	text-align: left;
+	background-color: #444444;
+	color: #FFFBF0;
+	}
+#left-menu h2 {
+	/* The template includes several headings (H2s) that do not display in standard browsers.  They improve site accessibility by titling lists of links -- for example, the list of Frequently Used Tools in the header. NOTE: This expalins why there is not a standard H2 style.  Rather, H2 is styled for different purposes in different divs */
+	display: none;
+	}
+#left-menu ul li a {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the STATIC color of the MAJOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #ffffff;
+	display: block;
+	width: 210px;
+	background-color: #393E52;
+	font-size: 1.4em;
+	border-bottom-style: ridge;
+	border-bottom-color: #363A4E;
+	border-bottom-width: 1px;
+	padding-top: 0.7em;
+	padding-right: 15px;
+	padding-bottom: 0.7em;
+	padding-left: 15px;
+	border-top-width: 1px;
+	border-top-style: ridge;
+	border-top-color: #FFFBF0;
+	}
+#left-menu ul li a:hover {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the HOVER color of the MAJOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #BFBFBF;
+	display: block;
+	width: 210px;
+	background-color: #737B9D;
+	border-bottom-width: 1px;
+	border-bottom-style: ridge;
+	border-bottom-color: #FFFBF0;
+	border-top-width: 1px;
+	border-top-style: ridge;
+	border-top-color: #262937;
+	}
+
+#left-menu ul li a:active {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the HOVER color of the MAJOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #000000;
+	display: block;
+	width: 210px;
+	background-color: #EDEDED;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: ridge;
+	border-bottom-style: ridge;
+	border-top-color: #FFFBF0;
+	border-bottom-color: #2D3140;
+	}
+
+
+#left-menu ul li ul li a {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the STATIC color of the MINOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #DDDDDD;
+	display: block;
+	width: 210px;
+	background-color: #1D1F29;
+	font-size: 1.2em;
+	padding: .7em 15px;
+	}
+#left-menu ul li ul li a:hover {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the HOVER color of the MINOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #000000;
+	display: block;
+	width: 210px;
+	background-color: #737B9D;
+	}
+
+#left-menu ul li ul li a:active {
+	/* Styles the Major Link Buttons.  NOTE: This is where you would adjust the HOVER color of the MINOR Link button.  To do so, simply change the hexadecimal value of "background-color" */
+	list-style: none;
+	color: #000000;
+	display: block;
+	width: 210px;
+	background-color: #EDEDED;
+	}
+
+	
+	/* COLUMN THAT MERGES MAIN LEFT AND MIDDLE COLUMNS */
+	
+#main-twocol {
+	/* Establishes the width of main-twocol */
+	width: 480px;
+	background-color: #FFF;
+	font-size: 12px;
+	color: #2A3F55;
+	border: medium none #FFF;
+	}
+	
+
+	/* MAIN LEFT COLUMN */
+	
+#main-left {
+	/* Establishes the width of main-left */
+	text-align: left;
+	width: 230px;
+	}
+	
+	
+	/* MAIN MIDDLE COLUMN */
+	
+#main-middle {
+	/* Establishes the width of main-middle */
+	text-align: left;
+	width: 230px;
+	padding-left: 20px;
+	}
+	
+	
+	/* MAIN RIGHT COLUMN */
+	
+#main-right {
+	/* Establishes the width of main-right */
+	text-align: left;
+	width: 200px;
+	clip: rect(0.0em,auto,auto,auto);
+	color: #808080;
+	margin-top: -20px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	}
+#main-right p{
+	font-size: 1.1em;
+	line-height: 1.4em;
+	font-weight: lighter;
+	margin-top: 0.5em;
+	margin-right: 1em;
+	margin-bottom: 0em;
+	margin-left: 1em;
+	}
+#main-right h2{
+	font-size: 1.5em;
+	line-height: 1.6em;
+	color: #F89735;
+	font-weight: lighter;
+	margin-top: -20px;
+	margin-right: 1em;
+	margin-bottom: 0em;
+	margin-left: 0.6em;
+        }
+#main-right h4{
+        font-size: 1.1em;
+        line-height: 1.4em;
+        color: #F89735;
+        font-weight: lighter;
+        margin: 1em 1em 0em 1em;
+        text-transform: lowercase;
+        }
+
+
+#news h1{
+        font-size: 1.7em;
+        line-height: 1.8em;
+        color: #F89735;
+        font-weight:bold;
+        margin: 0em 0em 0em 1.2em;
+        }
+
+#directory h3 {
+	/* Styles all Heading 3s in the main content area. Use H3 for the sub-subheads in your content. For example, use H3 to title a small ordered list that is found under a main subhead (H2) */
+	font-size: 1.2em;
+	line-height: 1.333em;
+	margin: 0em 0em 0em 1.6em;
+	color: #333333;
+        font-weight: lighter;
+        text-transform: capitalize;
+	}
+#directory a {
+	/* Styles all Heading 3s in the main content area. Use H3 for the sub-subheads in your content. For example, use H3 to title a small ordered list that is found under a main subhead (H2) */
+	font-size: 1em;
+	line-height: 1.333em;
+	margin: 0em 0em 0em 0em;
+	color: #333333;
+        font-weight: lighter;
+	}
+
+
+#main-content H5 {
+	/* Styles everything within p tags <p> . . . </p> */
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 0em 0em 0em 1.75em;
+        text-transform: uppercase;
+        font-weight: lighter;
+	}
+#main-content2 {
+	background-color: #FFF;
+	color: #2A3F55;
+	text-align: left;
+	margin: 0px;
+	font-size: 10px;
+	padding-top: 6px;
+	padding-right: 5px;
+	padding-bottom: 0.1px;
+	padding-left: 6px;
+	border: thin solid #393E52;
+}
+#homepage {
+}
+
+#main-table {
+	bborder-right: dotted 2px #59707D;
+	width: 0;
+	border-right-width: medium;
+	border-right-style: none;
+	border-right-color: #2A7FAA;
+	border-left-width: 2.5px;
+	border-left-color: #2A7FAA;
+	border-left-style: dotted;
+}
+
+#mian-tabletop {
+	vertical-align: top;
+	padding-top: 0px;
+	top: 0px;
+}
+#table-news {
+}
+.divider {
+	border-left-width: 2.5px;
+	border-left-style: none;
+	border-left-color: #2A7FAA;
+	border-right-width: 2.5px;
+	border-right-style: dotted;
+	border-right-color: #2A7FAA;
+}
+#table-seminar {
+}
+#table-lists {
+	font-size: 14px;
+	color: #2A3F55;
+	width: 220px;
+}
+
+.seminar {
+}
+.timeAndPlace {
+}
+.table-bottom {
+}
+
+#mian-tabletop div ul li {
+	font-size: 12px;
+	color: #464646;
+	text-align: left;
+}
+#main-tabletop div ul {
+	font-size: 10px;
+	color: #464646;
+	text-align: left;
+}
+#menu-whatwedo {
+	white-space: normal;
+}
+#menu-whatwedo2 {
+	margin-left: 20px;
+	color: #DDDDDD;
+}
+
+#main #content-outer #content-inner #main-content #main-twocol div div table tr #table-lists div {
+	text-align: justify;
+	list-style-type: square;
+}
+.left-menudown {
+	background-image: url(../images/leftmenubg3.png);
+	height: 600px;
+	padding-top: 45px;
+	padding-left: 8px;
+	background-repeat: no-repeat;
+	background-color: #DDDEE1;
+	padding-bottom: 0px;
+}
