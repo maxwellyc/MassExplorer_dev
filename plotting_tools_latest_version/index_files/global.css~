@@ -1,0 +1,355 @@
+/* CSS Document */
+
+/* 	This document (global.css) serves two main functions:
+
+	First, it builds the basic structure of every page. It does so by dividing the page into five main sections: Header (everything above the orange, horizontal navigation bar); Department (the orange, horizontal navigation bar); Left Menu (the vertical navigation area); Main Content (everything to the right of the Left Menu); and Footer (everything below the Main Content -- the orange, horizontal line and down).
+	
+	Second, it styles the Header, Department, and Footer sections.
+	
+	Note: Because this document controls the structure and appearance of the template, YOU SHOULD NOT NEED TO EDIT IT. In order to style and format your pages, edit your secondary style sheet. If you have any questions, please contact: webteam@utk.edu */
+	
+	
+	
+
+
+* {
+	/* Turns off default padding and margins on ALL elements, including paragraphs (p) and headers (H1, H2, H3, etc.) */
+	margin: 0;
+	padding: 0;
+	color: #2A3F55;
+	}
+	
+a, a:hover { 
+	/* Turns off the automatically-generated line beneath every link.  To turn it back on, you will need to use the style "text-decoration: underline" or you can create a custom line using the "border-bottom" style */
+	text-decoration: none;
+	}
+
+body {
+	/* Styles the template's background colors and default fonts. */
+	/* NOTE: "font-size" is set to 62.5% in order to change the default font from 16 pixels to 10 pixels (10 is 62.5% of 16).  In all of the secondary style sheets, you'll notice that font-size is determined by ems. So, for example, the main content is often displayed at 1.1em, which translates to 11 pixels (the default size, 10, multiplied by 1.1).  We use ems for a variety of reasons, the most important of which is that it allows font sizes to be customized by the user in Internet Explorer, thereby improving overall web accessibility */
+	text-align: center;
+	background: #666666 url(http://www.utk.edu/cs/templates/images/main-back.gif) repeat-x top;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	color: #333333;
+	}
+	
+.skip {
+	/* There is a "skip to main content" link in the template header that does not display in standard browsers. It is included for the benefit of seeing-impaired users who browse with text-reading devices */
+	display: none;
+	}
+
+	
+	
+	
+	
+/* HEADER */
+
+#header-inner {
+	/* Establishes the width of the header and styles it */
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	background: url(http://www.utk.edu/cs/templates/images/header-inner-back.gif) no-repeat center top;
+	}
+#header-inner h2 {
+	/* The template includes several headings (H2s) that do not display in standard browsers.  They improve site accessibility by titling lists of links -- for example, the list of Frequently Used Tools in the header. NOTE: This expalins why there is not a standard H2 style.  Rather, H2 is styled for different purposes in different divs */
+	display: none;
+	}
+#header-left {
+	/* The UT wordmark is the only thing that lives in header-left. */
+	width: 240px;
+	float: left;
+	display: inline;
+	}
+.logo {
+	/* In order to improve web accessibility, the header includes a simple text link to utk.edu (in addition to the clickable UTK wordmark).  This style prevents it from displaying in standard web browsers */
+	display: none;
+	}
+#header-right {
+	/* Everything to the right of the UT wordmark lives in header-right, beginning with the large, wide header image (header-title.jpg). */
+	width: 720px;
+	float: right;
+	display: inline;
+	}	
+#header-menu {
+	/* header-menu is the home of the Frequently Used Tools (Webmail, Tmail, Online@UT, and the A-Z index), which are organized as an unordered list in order to improve accessibility. */
+	float: left;
+	display: inline;
+	width: 440px;
+	padding-left: 20px;
+	text-align: left;
+	color: #888888;
+	font-size: 1.1em;
+	line-height: 25px;
+	}
+#header-menu ul li {
+	/* Turns off the bullets that are typically found in an unordered list and displays the list horizontally rather than vertically (the default) */
+	list-style: none;
+	display: inline;
+	}
+#header-menu a {
+	/* Styles the links in the Frequently Used Tools menu */
+	color: #eeeeee;
+	border-bottom: 1px solid #888888;
+	padding-bottom: 1px;
+	}
+#header-menu a:hover {
+	color: #ffffff;
+	border-bottom: 1px solid #f77f00;
+	padding-bottom: 1px;
+	}
+#header-search {
+	/* header-search is the home of the UT search engine */
+	float: right;
+	display: inline;
+	padding: 0px 10px 0px 0px;
+	width: 230px;
+	text-align: right;
+	}
+.searchbox {
+	/* Styles the text field of the search engine */
+	width: 111px;
+	font-size: .9em;
+	margin-top: 4px;
+	padding: 1px 2px 0px 2px;
+	}
+.searchtext {
+	/* Styles the drop-down menu of the search engine */
+	width: 75px;
+	font-size: .9em;
+	}
+.hide-search {
+	/* Another hidden label included to improve web accessibility */
+	display: none;
+	}
+	
+	
+	
+	
+	
+/* DEPARTMENT -- This is the horizontal orange bar where college, department, and unit links live. */
+
+#department-outer {
+	/* Extends the orange bar across the full width of the browser */
+	background:  #f77f00 center;
+	}
+#department-inner {
+	/* Establishes the width of the Department area and styles it */
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #f77f00;
+	}
+#department-left {
+	/* department-left is the dark orange link directly beneath the UT wordmark.  PLEASE NOTE that the background color is controlled by the link styles (department-left a, a:hover), so if you do not make the word in that department-left a hyperlink, the colors will not display properly.  When creating your navigation, make this the link to YOUR homepage. */
+	width: 240px;
+	float: left;
+	display: inline;
+	text-align: left;
+	}
+#department-left h2 {
+	/* Styles the name of the department, college, or unit */
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1.1em;
+	line-height: 2.27em;
+	font-weight: lighter;
+	}
+#department-left a {
+	/* Styles the name of the department, college, or unit */
+	display: block;
+	width: 208px;
+	padding: 0px 15px;
+	background: #c65900;
+	border-right: 1px solid #b25000;
+	border-left: 1px solid #b25000;
+	color: #FFFFFF;
+	}
+#department-left a:hover {	
+	/* Styles the name of the department, college, or unit */
+	display: block;
+	width: 208px;
+	padding: 0px 15px;
+	background: #777777;
+	border-right: 1px solid #6b6b6b;
+	border-left: 1px solid #6b6b6b;
+	color: #FFFFFF;
+	}
+#department-right {
+	/* department-right is where you can create "breadcrumb navigation."  For example, if the page lists the Ceramics faculty, department-right might include: School of Art > Ceramics > Faculty. This gives users a better sense of how deeply they have dug themselves into a site.  You might also use department-right to feature important or frequently-used links */
+	float: right;
+	display: inline;
+	background: #f77f00;
+	padding-right: 10px;
+	width: 690px;
+	color: #ffffff;
+	text-align: left;
+	line-height: 2.27em;
+	font-size: 1.1em;
+	}
+#department-right a {
+	/* Styles the links */
+	color: #ffffff;
+	border-bottom: 1px solid #faac59;
+	padding-bottom: 1px;
+	}
+#department-right a:hover {
+	color: #ffffff;
+	border-bottom: 1px solid #c65900;
+	padding-bottom: 1px;
+	}
+	
+	
+
+
+
+/* CONTENT */
+
+#content-outer {
+	/* Establishes the width of the Content area and styles it */
+	background:  #ffffff center;
+	}
+#content-inner {
+	background-color: #ffffff;
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	overflow: hidden;
+	}
+	
+	/* LEFT MENU */
+	
+#left-menu {
+	/* Creates the Left Menu column */
+	float: left;
+	display: inline;
+	}
+#left-menu ul {
+	list-style-type: none;
+	}
+
+	
+	/* MAIN CONTENT AREA */
+	
+#main-content {
+	/* main-content is everything to the right of the left menu. In all of the standard template designs, it is 720 pixels wide. */
+	/* main-content can be used as a single, large content area or it can be sub-divided in two ways:
+		 Two columns: main-twocol, main-right
+		 Three columns: main-left, main-middle, main-right */
+	float: right;
+	display: inline;
+	text-align: left;
+	font-size: 12px;
+	color: #D6D6D6;
+	}
+	
+		/* COLUMN THAT MERGES MAIN LEFT AND MIDDLE COLUMNS */
+		
+#main-twocol {
+	float: left;
+	display: inline;
+	color: #2A3F55;
+	font-size: 12px;
+	background-color: #FFF;
+	}
+	
+		/* LEFT COLUMN */
+	
+#main-left {
+	float: left;
+	display: inline;
+	}
+	
+		/* MIDDLE COLUMN */
+	
+#main-middle {
+	float: left;
+	display: inline;
+	}
+	
+		/* RIGHT COLUMN */
+		
+#main-right {
+	float: right;
+	display: inline;
+	color: #808080;
+	}
+
+	
+
+
+
+/* FOOTER */
+
+#footer-green-outer {
+	/* Extends the orange line across the full width of the browser */
+	background-color:  green;
+	width: 100%;
+	}
+#footer-green-inner {
+	/* Establishes the width of the orange line and styles it */
+	width: 960px;
+	background-color:  green;
+	margin: 0 auto;
+	text-align: center;
+	height: 3px;
+	}
+#footer-grey-outer {
+	/* Extends the grey background across the full width of the browser */
+	background-color: #666666;
+	width: 100%;
+	}
+#footer-grey-inner {
+	/* Establishes the width of the grey footer and styles it */
+	width: 930px;
+	margin: 0 auto;
+	color: #dddddd;
+	line-height: 18px;
+	font-size: 1.1em;
+	text-align: left;
+	padding: 15px 15px 45px 15px;
+	}
+#footer-grey-inner h2 {
+	/* The template includes several headings (H2s) that do not display in standard browsers.  They improve site accessibility by titling lists of links -- for example, the list of Frequently Used Tools in the header. NOTE: This expalins why there is not a standard H2 style.  Rather, H2 is styled for different purposes in different divs */
+	display: none;
+	}
+#footer-grey-inner ul li {
+	/* Turns off the bullets that are typically found in an unordered list and displays the list horizontally rather than vertically (the default) */
+	list-style: none;
+	display: inline;
+	margin-right: 10px;
+	}
+#footer-grey-inner a {
+	/* Styles the links in the footer */
+	color: #dddddd;
+	border-bottom: 1px solid #999999;
+	padding-bottom: 2px;
+	}
+#footer-grey-inner a:hover {
+	color: #ffffff;
+	border-bottom: 1px solid #f77f00;
+	padding-bottom: 2px;
+	}
+#seminar-time {
+	color: #00354F;
+}
+#seminar-speaker {
+	font-weight: 600;
+	color: #00354F;
+}
+#seminar-time {
+	color: #00354F;
+}
+#news-time {
+	color: #A00;
+}
+#caption {
+	color: #2A3F55;
+}
+#contact-name {
+	color: #646464;
+}
+#menu-shift {
+	margin-left: 20px;
+	color: #FFFBF0;
+}
